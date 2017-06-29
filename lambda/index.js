@@ -123,6 +123,11 @@ const handlers = {
         const speechOutput = this.t('GET_FACT_MESSAGE') + randomFact;
         this.emit(':tellWithCard', speechOutput, this.t('SKILL_NAME'), randomFact);
     },
+	'EchoActorIntent': function () {
+		const actorName = this.event.request.intent.slots.actorName;
+		const speechOutput = "The name of the actor is " + actorName;
+		this.emit(':ask', speechOutput, "Hello? Still there?")
+	},
     'AMAZON.HelpIntent': function () {
         const speechOutput = this.t('HELP_MESSAGE');
         const reprompt = this.t('HELP_MESSAGE');
