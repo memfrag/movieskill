@@ -128,6 +128,10 @@ const handlers = {
 		const speechOutput = "The name of the actor is " + actorName;
 		this.emit(':ask', speechOutput, "Hello? Still there?")
 	},
+    'MockCorrelationIntent': function () {
+        const speechOutput = "Probably because color timer David Orr worked on both films.";
+        this.emit(':tell', speechOutput);
+    },
     'AMAZON.HelpIntent': function () {
         const speechOutput = this.t('HELP_MESSAGE');
         const reprompt = this.t('HELP_MESSAGE');
