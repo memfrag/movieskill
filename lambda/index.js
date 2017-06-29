@@ -124,7 +124,7 @@ const handlers = {
         this.emit(':tellWithCard', speechOutput, this.t('SKILL_NAME'), randomFact);
     },
 	'EchoActorIntent': function () {
-		const actorName = this.event.request.intent.slots.actorName;
+		const actorName = this.event.request.intent.slots.actorName.value;
 		const speechOutput = "The name of the actor is " + actorName;
 		this.emit(':ask', speechOutput, "Hello? Still there?")
 	},
